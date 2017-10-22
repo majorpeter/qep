@@ -15,6 +15,8 @@ public:
     Qep(bool inverted = false, int32_t startPosition = 0);
     virtual ~Qep() {}
 
+    virtual void init() {}
+
     /**
      * This method must calculate 'delta' value in implementations.
      *
@@ -22,11 +24,11 @@ public:
      */
     virtual void update();
 
-    inline int32_t getDeltaValue() {
+    inline int32_t getDeltaValue() const {
         return delta;
     }
 
-    inline int32_t getAbsolutePosition() {
+    inline int32_t getAbsolutePosition() const {
         return absPosition;
     }
 protected:
