@@ -47,11 +47,11 @@ void QepStm32F1Gpio::update() {
 
     switch (phase - this->phase) {
     case 1:
-        delta = 1;
+        delta = inverted ? -1 : 1;
         break;
     case -1:
     case phaseCount - 1:
-        delta = -1;
+        delta = inverted ? 1 : -1;
         break;
     default:
         delta = 0;
